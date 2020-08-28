@@ -1,0 +1,28 @@
+{% extends 'ISworkshop/index.html' %}
+
+{% block title %}<title>Profile Page</title>{% endblock %}
+
+{% block content %}
+
+<div class="card" style="width: 18rem; margin-top: 150px; margin-left: 100px;">
+    <img class="card-img-top" src="https://media.istockphoto.com/photos/ve-solidified-my-name-in-the-business-world-picture-id831902150" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Danica Medel</h5>
+      <p class="card-text">CAPES Miles Points</p>
+    </div>
+</div>
+
+<div>
+    <ul class="list-group" style="margin-left: 500px; margin-top: -270px; margin-right: 200px;">
+        <li class="list-group-item">Email:</li>
+        <li class="list-group-item">Graduation Year:</li>
+        <li class="list-group-item">Date joined:</li>
+        <li class="list-group-item">Degree:</li>
+        <li class="list-group-item">Program:</li>
+        <li class="list-group-item">Student Number:</li>
+        <li class="list-group-item">Last login:</li>
+    </ul>
+</div>
+
+<button type="button" class="btn btn-primary" style="margin-left:100px; margin-top: -100px;"><a href="{% url 'profilepageforms' %}" style="color: white;">Edit Profile Page</a></button>
+{% endblock content %}
