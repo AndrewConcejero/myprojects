@@ -46,6 +46,9 @@ class ProfilePage(models.Model):
 			max_length=60, choices=PROGRAMS, default=PROGRAMS.Anthropology)
     profile_picture = models.ImageField(
 			verbose_name="profile picture", default="default.jpg", upload_to="profile_pictures")
+    resume = models.FileField(upload_to="resumes", blank=True)
+    def __str__(self):
+        return self.student_number
 
 class Company(models.Model):
     company_email = models.EmailField(
