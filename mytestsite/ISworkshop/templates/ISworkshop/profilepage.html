@@ -1,26 +1,30 @@
 {% extends 'ISworkshop/index.html' %}
-
+{% load static %}
 {% block title %}<title>Profile Page</title>{% endblock %}
 
 {% block content %}
+{% for post in posts %}
 
 <div class="card" style="width: 18rem; margin-top: 150px; margin-left: 100px;">
-    <img class="card-img-top" src="https://media.istockphoto.com/photos/ve-solidified-my-name-in-the-business-world-picture-id831902150" alt="Card image cap">
+    <img class="card-img-top" src="{{post.profile_picture.url}}" alt="Card image cap">
     <div class="card-body">
-      <h5 class="card-title">Danica Medel</h5>
-      <p class="card-text">CAPES Miles Points</p>
+      <h5 class="card-title">{{post.first_name}} {{post.last_name}}</h5>
+      <p class="card-text">CAPES Miles Points: 550</p>
     </div>
 </div>
 
 <div>
     <ul class="list-group" style="margin-left: 500px; margin-top: -270px; margin-right: 200px;">
-        <li class="list-group-item">Email:</li>
-        <li class="list-group-item">Graduation Year:</li>
-        <li class="list-group-item">Date joined:</li>
-        <li class="list-group-item">Degree:</li>
-        <li class="list-group-item">Program:</li>
-        <li class="list-group-item">Student Number:</li>
-        <li class="list-group-item">Last login:</li>
+
+		<li class="list-group-item">Email: {{post.email}}</li>
+        <li class="list-group-item">Graduation Year: {{post.graduation_year}}</li>
+        <li class="list-group-item">Date joined: {{post.date_joined}}</li>
+        <li class="list-group-item">Degree: {{post.degree}}</li>
+        <li class="list-group-item">Program: {{post.program}}</li>
+        <li class="list-group-item">Student Number: {{post.student_number}}</li>
+        <li class="list-group-item">Last login: {{post.last_login}}</li>
+
+        {% endfor %}
     </ul>
 </div>
 

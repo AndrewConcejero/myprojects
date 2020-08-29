@@ -1,11 +1,11 @@
 from django.shortcuts import render
+from .models import ProfilePage
 
 # Create your views here.
 def index(request):
-  context = { }
-
-  return render(request, 'ISworkshop/profilepage.html', context=context)
-
+  posts = ProfilePage.objects.all()
+  return render(request, 'ISworkshop/profilepage.html', {'posts': posts})
+  
 def form(request):
 
   return render(request, 'ISworkshop/profilepageforms.html', {})
